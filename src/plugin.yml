@@ -1,3 +1,14 @@
 name: SaveMe
-main: littlegruz.saveme.SaveMe
+main: littlegruz.saveme.SaveMeMain
 version: 0.1
+commands:
+   addcheckpointworld:
+      description: Adds the current world to the list of worlds effected by the mod
+      usage: /addcheckpointworld
+   removecheckpointworld:
+      description: Removes the current world to the list of worlds effected by the mod
+      usage: /removecheckpointworld
+permissions:
+   saveme.savetheworld:
+      description: Adding/removing the current world to/from the list of worlds effected by the mod
+      default: op
