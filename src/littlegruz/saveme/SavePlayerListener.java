@@ -15,12 +15,20 @@ public class SavePlayerListener implements Listener {
    /* When a player dies, spawn them at their last checkpoint */
    @EventHandler
    public void onPlayerRespawn(PlayerRespawnEvent event){
+      event.setRespawnLocation(plugin.getPlayerMap().get(event.getPlayer().getName()));
       plugin.getServer().broadcastMessage("Respawned");
    }
    
-   /* When a player joins, spawn them at their last checkpoint */
+   /* When a player joins, spawn them at their last checkpoint if they exist
+    * in the HashMap */
    @EventHandler
    public void onPlayerJoin(PlayerJoinEvent event){
-      plugin.getServer().broadcastMessage("Respawned");
+      if(plugin.getPlayerMap().get(event.getPlayer().getName()) == null){
+         String name = event.getPlayer().getName();
+         plugin.getPlayerMap().put(name, plugin.getServer().getWorld(plugin.getServer().getPlayer(name).getWorld().getUID()).getSpawnLocation());
+      }
+      else
+         event.getPlayer().teleport(plugin.getPlayerMap().get(event.getPlayer().getName()));
+      plugin.getServer().broadcastMessage("Join spawn");
    }
 }

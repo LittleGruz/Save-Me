@@ -81,4 +81,8 @@ public class SaveMe extends JavaPlugin {
       
       log.info("Save Me! v0.1 disabled");
    }
+
+   public HashMap<String, Location> getPlayerMap() {
+      return playerMap;
+   }
 }
