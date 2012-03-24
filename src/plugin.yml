@@ -1,6 +1,6 @@
 name: SaveMe
 main: littlegruz.saveme.SaveMeMain
-version: 0.1
+version: 1.0
 commands:
    addcheckpointworld:
       description: Adds the current world to the list of worlds effected by the mod

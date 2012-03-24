@@ -111,7 +111,7 @@ public class SaveMeMain extends JavaPlugin {
       
       getServer().getPluginManager().registerEvents(new SavePlayerListener(this), this);
       getServer().getPluginManager().registerEvents(new SaveBlockListener(this), this);
-      log.info("Save Me! v0.1 enabled");
+      log.info("Save Me! v1.0 enabled");
    }
    
    public void onDisable(){
@@ -167,7 +167,7 @@ public class SaveMeMain extends JavaPlugin {
          log.info("Error saving Save Me! worlds");
       }
       
-      log.info("Save Me! v0.1 disabled");
+      log.info("Save Me! v1.0 disabled");
    }
    
    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
@@ -187,7 +187,7 @@ public class SaveMeMain extends JavaPlugin {
                sender.sendMessage("You do not have permissions for this command");
          }
          else
-            sender.sendMessage("Please don't use this command from the console");
+            sender.sendMessage("Please do not use this command from the console");
       }
       else if(cmd.getName().compareToIgnoreCase("removecheckpointworld") == 0){
          Player player;
@@ -204,7 +204,7 @@ public class SaveMeMain extends JavaPlugin {
                sender.sendMessage("You do not have permissions for this command");
          }
          else
-            sender.sendMessage("Please don't use this command from the console");
+            sender.sendMessage("Please do not use this command from the console");
       }
       return true;
    }
